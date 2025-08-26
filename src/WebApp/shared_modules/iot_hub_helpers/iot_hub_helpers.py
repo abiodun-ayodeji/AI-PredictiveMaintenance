@@ -80,7 +80,7 @@ class IoTHub:
 
         payload_json = json.loads(payload)
 
-        keys = map(str.lower, payload_json.keys())
+        keys = [k.lower() for k in payload_json.keys()]
 
         if 'tags' not in keys:
             payload_json['tags'] = {}
